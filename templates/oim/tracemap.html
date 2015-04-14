@@ -501,10 +501,10 @@ var IpTraceTableView = Backbone.View.extend({
         form.append( i_span );
         form.append("{% csrf_token %}");
         if ( hostname ) {
-            form.append($("<input/>",{type:'hidden',name:'ruletype',value:'hostnamerule'}));
-	       } else {
-            form.append($("<input/>",{type:'hidden',name:'ruletype',value:'iprule'}));
-	       }
+        form.append($("<input/>",{type:'hidden',name:'hostname',value:hostname}));
+        form.append($("<input/>",{type:'hidden',name:'confidence',value:50}));
+        form.append("<input type='submit' value='ok'/>");
+        }
         var td = $('<td>');
         td.append( form );
         el.append( td );
